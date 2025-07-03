@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
    <children>
       <MenuBar layoutX="87.0" layoutY="188.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -16,11 +15,16 @@
             <items>
                   <MenuItem fx:id="menuCadastroUsuarios" mnemonicParsing="false" onAction="#menuCadastroUsuariosClick" text="Usuários" />
               <MenuItem fx:id="menuFechar" mnemonicParsing="false" onAction="#menuFecharClick" text="Fechar" />
+                  <MenuItem fx:id="menuCadastroUsuarios1" mnemonicParsing="false" onAction="#menuCadastroUsuariosClick" text="Clientes" />
+                  <MenuItem fx:id="menuCadastroUsuarios11" mnemonicParsing="false" onAction="#menuCadastroUsuariosClick" text="Produtos" />
             </items>
           </Menu>
           <Menu fx:id="menuRelatorios" mnemonicParsing="false" text="Relatórios">
             <items>
               <MenuItem fx:id="menuRelatorioUsuarios" mnemonicParsing="false" text="Usuários" />
+                  <MenuItem fx:id="menuRelatorioUsuarios1" mnemonicParsing="false" text="Clientes" />
+                  <MenuItem fx:id="menuRelatorioUsuarios11" mnemonicParsing="false" text="Produtos" />
+                  <MenuItem fx:id="menuRelatorioUsuarios111" mnemonicParsing="false" text="Vendas" />
             </items>
           </Menu>
           <Menu fx:id="menuAjuda" mnemonicParsing="false" text="Ajuda">
@@ -28,6 +32,14 @@
               <MenuItem fx:id="menuSobre" mnemonicParsing="false" text="Sobre" />
             </items>
           </Menu>
+            <Menu fx:id="menuRelatorios1" mnemonicParsing="false" text="Clientes">
+               <items>
+                  <MenuItem fx:id="menuRelatorioUsuarios1" mnemonicParsing="false" text="Listar" />
+                  <MenuItem fx:id="menuRelatorioUsuarios12" mnemonicParsing="false" text="Cadastrar" />
+                  <MenuItem fx:id="menuRelatorioUsuarios121" mnemonicParsing="false" text="Excluir" />
+                  <MenuItem fx:id="menuRelatorioUsuarios1211" mnemonicParsing="false" text="Atualizar" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
       <Pane layoutX="82.0" layoutY="361.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
