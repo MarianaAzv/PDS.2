@@ -28,6 +28,25 @@ public class ClienteDAO {
         }
     }
     
+    public void atualizarCliente(Cliente cliente) throws SQLException{
+
+String sql="UPDATE cliente set nome =?,telefone =?,endereco=?,data_nascimento=? where id =?";
+           try (Connection conn = ConexaoBD.conectar(); 
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
+stmt.setString(1,cliente.getNome());
+stmt.setString(2,cliente.getTelefone());
+stmt.setString(3,cliente.getEndereco());
+stmt.setDate(4,cliente.getDataNascimento());
+ stmt.executeUpdate();
+}
+
+    }
+    
+ public void excluir(Cliente cliente) throws SQLException {
+        String delete = "DELETE FROM USUARIOS WHERE ID = ?";
+        delete(delete, cliente.getId());
+    }
+       
     public void listarClientes(){
         String sql = "SELECT * FROM cliente";
         
