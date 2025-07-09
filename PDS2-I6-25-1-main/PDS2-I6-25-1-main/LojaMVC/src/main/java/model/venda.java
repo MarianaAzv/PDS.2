@@ -5,13 +5,18 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  *
  * @author aluno
  */
-public class venda {
-
+public class Venda {
+  private int id;
+    private LocalDate dataCompra;
+    private double valorTotal;
+    private int clienteId;
+    private List<ItemProduto> itens; 
     /**
      * @return the id
      */
@@ -27,33 +32,59 @@ public class venda {
     }
 
     /**
-     * @return the data_compra
+     * @return the dataCompra
      */
-    public LocalDate getData_compra() {
-        return data_compra;
+    public LocalDate getDataCompra() {
+        return dataCompra;
     }
 
     /**
-     * @param data_compra the data_compra to set
+     * @param dataCompra the dataCompra to set
      */
-    public void setData_compra(LocalDate data_compra) {
-        this.data_compra = data_compra;
+    public void setDataCompra(LocalDate dataCompra) {
+        this.dataCompra = dataCompra;
     }
 
     /**
-     * @return the valor_total
+     * @return the valorTotal
      */
-    public float getValor_total() {
-        return valor_total;
+    public double getValorTotal() {
+        return valorTotal;
     }
 
     /**
-     * @param valor_total the valor_total to set
+     * @param valorTotal the valorTotal to set
      */
-    public void setValor_total(float valor_total) {
-        this.valor_total = valor_total;
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
-    private int id;
-    private LocalDate data_compra;
-    private float valor_total;
+
+    /**
+     * @return the clienteId
+     */
+    public int getClienteId() {
+        return clienteId;
+    }
+
+    /**
+     * @param clienteId the clienteId to set
+     */
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    /**
+     * @return the itens
+     */
+    public List<ItemProduto> getItens() {
+        return itens;
+    }
+
+    /**
+     * @param itens the itens to set
+     */
+    public void setItens(List<ItemProduto> itens) {
+        this.itens = itens;
+    }
+ 
 }

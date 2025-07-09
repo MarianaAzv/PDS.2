@@ -15,6 +15,12 @@ public class Cliente {
     /**
      * @return the id
      */
+ public Cliente(String nome, String telefone,String endereco,LocalDate dataNascimento){
+     this.nome=nome;
+     this.telefone=telefone;
+     this.endereco=endereco;
+     this.dataNascimento=dataNascimento;
+ }
     public int getId() {
         return id;
     }
@@ -80,6 +86,9 @@ public class Cliente {
      */
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+    
+     public Cliente() {
     }
    
 }

@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.time.LocalDate;
 import model.Cliente;
 import model.ClienteDAO;
 
@@ -42,7 +43,7 @@ public class App extends Application {
        novoCliente.setNome("Ana Maria");
        novoCliente.setTelefone("1199999999");
        novoCliente.setEndereco("Rua das flores,123");
-       novoCliente.setDataNascimento(Date.valueOf("1990-05-10"));
+       novoCliente.setDataNascimento(LocalDate.parse("1990-05-10"));
        
        
        clienteDAO.inserirCliente(novoCliente);
