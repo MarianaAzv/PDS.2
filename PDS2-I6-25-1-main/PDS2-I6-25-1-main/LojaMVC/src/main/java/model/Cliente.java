@@ -2,6 +2,7 @@
 package model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Cliente {
     
@@ -9,7 +10,7 @@ public class Cliente {
     private String nome;
     private String telefone;
     private String endereco;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     
     /**
      * @return the id
@@ -70,14 +71,14 @@ public class Cliente {
     /**
      * @return the dataNascimento
      */
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
     /**
      * @param dataNascimento the dataNascimento to set
      */
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
    
