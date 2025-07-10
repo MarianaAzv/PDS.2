@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -78,4 +79,18 @@ public class ClienteDAO {
 
     return clientes;
 }
+    
+    public void atualizarCliente(Cliente cliente) throws SQLException {
+        String sql= "UPDATE cliente SET nome=?,telefone=?,endereco=?,data_nascimento=? WHERE id =?";
+        try(Connection conn = ConexaoBD.conectar(); 
+                PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,cliente.getNome());
+            stmt.setString(2,cliente.getTelefone());
+            stmt.setString(3,cliente.getEndereco());
+            stmt.setDate(4,Date.valueOf(cliente.getDataNascimento()));
+            stmt.setInt(5,cliente.getId());
+            
+            stmt.executeUpdate();
+        }
+    }
 }

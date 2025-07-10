@@ -71,7 +71,10 @@ public void setStage(Stage telaCadastrarCliente) {
 
         AlertaUtil.mostrarInformacao("Sucesso", "Cliente cadastrado com sucesso!");
 
-       
+     
        
     }
+  
+  
+  
 }
