@@ -1,4 +1,5 @@
 controller\CadastroUsuariosController.class
+controller\CadastroClienteController.class
 controller\PrincipalController.class
 model\Usuario.class
 principal\App.class
@@ -7,6 +8,9 @@ model\GenericDAO.class
 controller\LoginController.class
 model\LoginDAO.class
 module-info.class
+model\Cliente.class
+controller\ListaClienteController.class
 controller\ListagemUsuariosController.class
 model\UsuarioDAO.class
 util\AlertaUtil.class
+model\ClienteDAO.class

@@ -34,6 +34,12 @@ public class PrincipalController {
     @FXML
     private Menu menuCadastro;
 
+      @FXML
+    private MenuItem menuCadastraCliente;
+      
+          @FXML
+    private MenuItem menuList;
+          
     @FXML
     private MenuItem menuCadastroUsuarios;
 
@@ -48,7 +54,13 @@ public class PrincipalController {
 
     @FXML
     private MenuItem menuSobre;
+    
+      @FXML
+    private MenuItem produto11;
 
+          @FXML
+    private MenuItem Prod111;
+          
     @FXML
     void menuCadastroUsuariosClick(ActionEvent event) throws IOException {
         URL url = new File("src/main/java/view/ListagemUsuarios.fxml").toURI().toURL();
@@ -88,7 +100,60 @@ public class PrincipalController {
         
        
     }
+    
+    @FXML
+    void OnClickCliente(ActionEvent event) throws IOException {
+ URL url = new File("src/main/java/view/CadastroCliente.fxml").toURI().toURL();
+        FXMLLoader loader = new FXMLLoader(url);
+        Parent root = loader.load();
+        
+        Stage telaCadastroClientes = new Stage();
+        
+        CadastroClienteController luc = loader.getController();
 
+        luc.setStage(telaCadastroClientes);
+
+        
+
+        Scene scene = new Scene(root);
+        
+        telaCadastroClientes.setTitle("Cadastro clientes");
+        telaCadastroClientes.setScene(scene);
+        telaCadastroClientes.show();
+    }
+    
+     
+
+    @FXML
+    void listaCliente(ActionEvent event) throws IOException {
+URL url = new File("src/main/java/view/listaCliente.fxml").toURI().toURL();
+        FXMLLoader loader = new FXMLLoader(url);
+        Parent root = loader.load();
+        
+        Stage telaListagemUsuarios = new Stage();
+        
+        ListaClienteController luc = loader.getController();
+
+        luc.setStage(telaListagemUsuarios);
+
+        
+
+        Scene scene = new Scene(root);
+        
+        telaListagemUsuarios.setTitle("Listagem de Usuários");
+        telaListagemUsuarios.setScene(scene);
+        telaListagemUsuarios.show();
+    }
+
+    
+    @FXML
+    void listaProduto(ActionEvent event) {
+
+    }
+       @FXML
+    void OnClickroduto(ActionEvent event) {
+
+    }
     void setStage(Stage telaPrincipal) {
         this.stagePrincipal = telaPrincipal;
     }
