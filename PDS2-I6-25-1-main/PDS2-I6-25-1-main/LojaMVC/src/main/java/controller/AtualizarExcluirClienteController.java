@@ -1,10 +1,9 @@
-
 package controller;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-    import javafx.event.ActionEvent;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,9 +14,9 @@ import model.Cliente;
 import model.ClienteDAO;
 
 public class AtualizarExcluirClienteController {
-    
-Cliente cliente;
-Stage stageAtualizarExcluir;
+
+    Cliente cliente;
+    Stage stageAtualizarExcluir;
 
     @FXML
     private Button btnCadastarClientes;
@@ -52,45 +51,60 @@ Stage stageAtualizarExcluir;
     @FXML
     private TextField txtTelefone;
 
-     public void setStage(Stage stage) {
+    public void setStage(Stage stage) {
         this.stageAtualizarExcluir = stage;
     }
 
     
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+
+        txtNome.setText(cliente.getNome());
+        txtTelefone.setText(cliente.getTelefone());
+        txtEndereco.setText(cliente.getEndereco());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        txtDTNSC.setText(cliente.getDataNascimento().format(formatter));
+    }
+
     @FXML
     void OnClickAtualizar(ActionEvent event) {
-      try {
+        try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDate dtnsc = LocalDate.parse(txtDTNSC.getText(), formatter);
 
-            Atualizar(txtNome.getText(), txtTelefone.getText(), txtEndereco.getText(), dtnsc);
+            // Atualiza o cliente atual
+            cliente.setNome(txtNome.getText());
+            cliente.setTelefone(txtTelefone.getText());
+            cliente.setEndereco(txtEndereco.getText());
+            cliente.setDataNascimento(dtnsc);
+
+            ClienteDAO pdao = new ClienteDAO();
+            pdao.atualizarCliente(cliente);
+            System.out.println("Cliente atualizado com sucesso!");
+
         } catch (Exception e) {
-            System.out.println("Erro ao cadastrar cliente: " + e.getMessage());
+            System.out.println("Erro ao atualizar cliente: " + e.getMessage());
             e.printStackTrace();
         }
     }
+
     @FXML
-    void OnClickExcluir(ActionEvent event) throws SQLException {
-
-        ClienteDAO pdao = new ClienteDAO();
-        pdao.excluir(cliente);
+    void OnClickExcluir(ActionEvent event) {
+        try {
+            if (cliente != null) {
+                ClienteDAO pdao = new ClienteDAO();
+                pdao.excluir(cliente);
+                System.out.println("Cliente excluído com sucesso!");
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao excluir cliente: " + e.getMessage());
+            
+        }
     }
-
-    
-    public void Atualizar(String nome, String telefone, String endereco, LocalDate data_nascimento) throws SQLException{
-         System.out.println("Nome: " + nome);
-        System.out.println("Telefone: " + telefone);
-        System.out.println("Endereço: " + endereco);
-        System.out.println("Data de Nascimento: " + data_nascimento);
-        
-        cliente = new Cliente(nome, telefone, endereco,data_nascimento);
-      
-
-       
-   
-        ClienteDAO pdao = new ClienteDAO();
-        pdao.atualizarCliente(cliente);
-    }
+    public void carregarDadosCliente() {
+    txtNome.setText(cliente.getNome());
+    txtTelefone.setText(cliente.getTelefone());
+    txtEndereco.setText(cliente.getEndereco());
+    txtDTNSC.setText(cliente.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 }
-
-
+}

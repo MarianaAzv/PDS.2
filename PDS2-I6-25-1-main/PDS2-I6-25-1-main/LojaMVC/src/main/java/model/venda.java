@@ -7,10 +7,7 @@ package model;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- *
- * @author aluno
- */
+
 public class Venda {
   private int id;
     private LocalDate dataCompra;

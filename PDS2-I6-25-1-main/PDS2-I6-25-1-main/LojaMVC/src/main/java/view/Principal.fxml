@@ -32,14 +32,9 @@
               <MenuItem fx:id="menuSobre" mnemonicParsing="false" text="Sobre" />
             </items>
           </Menu>
-            <Menu fx:id="menuRelatorios1" mnemonicParsing="false" text="Clientes">
-               <items>
-                  <MenuItem fx:id="menuRelatorioUsuarios1" mnemonicParsing="false" text="Listar" />
-                  <MenuItem fx:id="menuRelatorioUsuarios12" mnemonicParsing="false" text="Cadastrar" />
-                  <MenuItem fx:id="menuRelatorioUsuarios121" mnemonicParsing="false" text="Excluir" />
-                  <MenuItem fx:id="menuRelatorioUsuarios1211" mnemonicParsing="false" text="Atualizar" />
-               </items>
-            </Menu>
+            <Menu fx:id="menuCliente" mnemonicParsing="false" onAction="#OnClickmenuCliente" text="Clientes" />
+            <Menu fx:id="menuProduto" mnemonicParsing="false" onAction="#OnClickmenuProduto" text="Produtos" />
+            <Menu fx:id="menuVenda" mnemonicParsing="false" onAction="#OnClickmenuVenda" text="Venda" />
         </menus>
       </MenuBar>
       <Pane layoutX="82.0" layoutY="361.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

@@ -48,6 +48,12 @@ public class PrincipalController {
 
     @FXML
     private MenuItem menuSobre;
+     @FXML
+    private Menu menuVenda;
+         @FXML
+    private Menu menuCliente;
+             @FXML
+    private Menu menuProduto;
 
     @FXML
     void menuCadastroUsuariosClick(ActionEvent event) throws IOException {
@@ -88,6 +94,20 @@ public class PrincipalController {
         
        
     }
+       @FXML
+    void OnClickmenuCliente(ActionEvent event) throws IOException {
+ ListagemCliente();
+    }
+
+    @FXML
+    void OnClickmenuProduto(ActionEvent event) throws IOException {
+    ListagemProduto();
+    }
+
+    @FXML
+    void OnClickmenuVenda(ActionEvent event) {
+
+    }
 
     void setStage(Stage telaPrincipal) {
         this.stagePrincipal = telaPrincipal;
@@ -104,5 +124,46 @@ public class PrincipalController {
             menuRelatorios.setDisable(true);
         }
     }
+    
+    
+     public void ListagemProduto() throws IOException{
+         URL url = new File("src/main/java/view/ListagemProdutos.fxml").toURI().toURL();
+    FXMLLoader loader = new FXMLLoader(url);
+    Parent root = loader.load();
+
+    Stage stageListagemProdutos = new Stage();
+
+    controller.ListagemProdutos controllerProdutos = loader.getController();
+    controllerProdutos.setStage(stageListagemProdutos);
+
+    stageListagemProdutos.setOnShown(e -> {
+        controllerProdutos.carregarProdutos();
+    });
+
+    Scene scene = new Scene(root);
+    stageListagemProdutos.setTitle("Listagem de Produtos");
+    stageListagemProdutos.setScene(scene);
+    stageListagemProdutos.show();
+    }
+     
+     public void ListagemCliente() throws IOException{
+           URL url = new File("src/main/java/view/ListagemClientes.fxml").toURI().toURL();
+    FXMLLoader loader = new FXMLLoader(url);
+    Parent root = loader.load();
+
+    Stage stageListagemClientes = new Stage();
+
+    controller.ListagemClientes controllerClientes = loader.getController();
+    controllerClientes.setStage(stageListagemClientes);
+
+    stageListagemClientes.setOnShown(e -> {
+        controllerClientes.carregarClientes();
+    });
+
+    Scene scene = new Scene(root);
+    stageListagemClientes.setTitle("Listagem de Clientes");
+    stageListagemClientes.setScene(scene);
+    stageListagemClientes.show();
+     }
 
 }

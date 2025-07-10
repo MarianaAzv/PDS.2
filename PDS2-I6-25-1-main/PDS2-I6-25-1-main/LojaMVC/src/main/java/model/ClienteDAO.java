@@ -89,6 +89,30 @@ public class ClienteDAO {
         }
     }
     
+    public List<Cliente> listarTodosClientes() {
+    List<Cliente> clientes = new ArrayList<>();
+    String sql = "SELECT * FROM cliente";
+
+    try (Connection conn = ConexaoBD.conectar();
+         PreparedStatement stmt = conn.prepareStatement(sql);
+         ResultSet rs = stmt.executeQuery()) {
+
+        while (rs.next()) {
+            Cliente cliente = new Cliente();
+            cliente.setId(rs.getInt("id"));
+            cliente.setNome(rs.getString("nome"));
+            cliente.setTelefone(rs.getString("telefone"));
+            cliente.setEndereco(rs.getString("endereco"));
+            cliente.setDataNascimento(rs.getDate("data_nascimento").toLocalDate());
+            clientes.add(cliente);
+        }
+
+    } catch (SQLException e) {
+        System.out.println("Erro ao listar clientes: " + e.getMessage());
+    }
+
+    return clientes;
+}
     
 
 }
