@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
    <children>
       <MenuBar layoutX="87.0" layoutY="188.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -28,6 +27,21 @@
               <MenuItem fx:id="menuSobre" mnemonicParsing="false" text="Sobre" />
             </items>
           </Menu>
+            <Menu fx:id="OnClickCliente" mnemonicParsing="false" text="Cliente">
+               <items>
+                  <MenuItem fx:id="menuSobre1" mnemonicParsing="false" onAction="#OnClickCliente" text="Sobre" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuProduto" mnemonicParsing="false" text="Produto">
+               <items>
+                  <MenuItem fx:id="menuSobre11" mnemonicParsing="false" onAction="#OnClickProduto" text="Sobre" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuVenda" mnemonicParsing="false" onAction="#OnClickVenda" text="Venda">
+               <items>
+                  <MenuItem fx:id="menuSobre111" mnemonicParsing="false" text="Sobre" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
       <Pane layoutX="82.0" layoutY="361.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

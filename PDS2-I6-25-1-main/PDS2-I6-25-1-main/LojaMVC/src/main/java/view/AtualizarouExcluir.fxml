@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.AtualizarouExcluirController">
+   <children>
+      <Label layoutX="77.0" layoutY="75.0" text="Nome" />
+      <Label layoutX="77.0" layoutY="119.0" text="Telefone" />
+      <Label layoutX="77.0" layoutY="162.0" text="Endereço" />
+      <Label layoutX="77.0" layoutY="227.0" text="Data de Nascimento" />
+      <Button fx:id="btnAtualizar" layoutX="105.0" layoutY="329.0" mnemonicParsing="false" onAction="#OnClickAtualizar" text="Atualizar" />
+      <Button fx:id="btnExcluir" layoutX="239.0" layoutY="329.0" mnemonicParsing="false" onAction="#OnClickExcluir" text="Excluir" />
+      <Button fx:id="btnVoltar" layoutX="403.0" layoutY="329.0" mnemonicParsing="false" onAction="#OnClickVoltar" text="Voltar" />
+      <TextField fx:id="txtNome" layoutX="245.0" layoutY="71.0" prefHeight="25.0" prefWidth="237.0" />
+      <TextField fx:id="txttel" layoutX="245.0" layoutY="115.0" prefHeight="25.0" prefWidth="237.0" />
+      <TextField fx:id="txtEnd" layoutX="245.0" layoutY="158.0" prefHeight="25.0" prefWidth="237.0" />
+      <TextField fx:id="txtDAsc" layoutX="239.0" layoutY="223.0" prefHeight="25.0" prefWidth="237.0" />
+   </children>
+</AnchorPane>

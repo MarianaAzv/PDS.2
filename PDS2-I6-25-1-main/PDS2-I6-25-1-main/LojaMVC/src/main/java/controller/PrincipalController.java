@@ -48,7 +48,72 @@ public class PrincipalController {
 
     @FXML
     private MenuItem menuSobre;
+  @FXML
+    private Menu menuVenda;
+  @FXML
+    private Menu menuProduto;
+  
+    @FXML
+    private Menu OnClickCliente;
+    
+        @FXML
+    private MenuItem menuSobre1;
 
+    @FXML
+    private MenuItem menuSobre11;
+
+    @FXML
+    private MenuItem menuSobre111;
+
+    @FXML
+    void OnClickCliente(ActionEvent event) throws IOException {
+ URL url = new File("src/main/java/view/ListagemCliente.fxml").toURI().toURL();
+        FXMLLoader loader = new FXMLLoader(url);
+        Parent root = loader.load();
+        
+        Stage telaListagemCliente = new Stage();
+        
+       ListagemCliente luc = loader.getController(); 
+
+        luc.setStage(telaListagemCliente);
+
+       telaListagemCliente.setOnShown(evento -> {
+            try {
+                luc.ajustarElementosJanela();
+            } catch (SQLException ex) {
+                Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+
+        Scene scene = new Scene(root);
+        
+        telaListagemCliente.setTitle("Listagem de Clientes");
+        telaListagemCliente.setScene(scene);
+        telaListagemCliente.show();
+    }
+
+    @FXML
+    void OnClickProduto(ActionEvent event) throws IOException {
+ URL url = new File("src/main/java/view/ListagemProdutos.fxml").toURI().toURL();
+    FXMLLoader loader = new FXMLLoader(url);
+    Parent root = loader.load();
+
+    Stage telaListagemProduto = new Stage();
+
+    ListagemProdutosController controller = loader.getController();
+    // Se precisar passar o stage:
+    // controller.setStage(telaListagemProduto);
+
+    Scene scene = new Scene(root);
+    telaListagemProduto.setTitle("Listagem de Produtos");
+    telaListagemProduto.setScene(scene);
+    telaListagemProduto.show();
+    }
+
+    @FXML
+    void OnClickVenda(ActionEvent event) {
+
+    }
     @FXML
     void menuCadastroUsuariosClick(ActionEvent event) throws IOException {
         URL url = new File("src/main/java/view/ListagemUsuarios.fxml").toURI().toURL();

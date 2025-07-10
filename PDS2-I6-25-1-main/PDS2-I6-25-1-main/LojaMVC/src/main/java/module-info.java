@@ -4,7 +4,7 @@ module principal.lojamvc {
     requires java.sql;
     requires java.base;
 
-    opens controller to javafx.fxml;
-    
+    opens controller to javafx.fxml,javafx.base;
+        
     exports principal;
 }
